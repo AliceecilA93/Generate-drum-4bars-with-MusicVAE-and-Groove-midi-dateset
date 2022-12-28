@@ -14,7 +14,7 @@
 Groove_Midi_Dataset_analysis|[Groove_Midi_Dataset_analysis](https://github.com/AliceecilA93/Generate-drum-4bars-with-MusicVAE-and-Groove-midi-dateset/blob/main/source/Groove_Midi_Dataset_analysis.ipynb)|         
 groovae_4bar | [groovae_4bar](https://github.com/AliceecilA93/Generate-drum-4bars-with-MusicVAE-and-Groove-midi-dateset/blob/main/source/MusicVAE%2BGroove_MIDI_Dateset%2Bgroovae_4bar.ipynb)|
 groovae_4bar with changing hparams| [groovae_4bar with changing hparams](https://github.com/AliceecilA93/Generate-drum-4bars-with-MusicVAE-and-Groove-midi-dateset/blob/main/source/MusicVAE%2BGroove_MIDI_Dataset_groovae_4bar_change_hprams.ipynb)| 
-hierdec-mel-4bar | [hierdec-mel-4bar]() |
+hierdec-mel-4bar | [hierdec-mel-4bar](https://github.com/AliceecilA93/Generate-drum-4bars-with-MusicVAE-and-Groove-midi-dateset/blob/main/source/MusicVAE%2BGroove_MIDI_Dataset%2Bhierdec_mel_4bar.ipynb) |
         
 
 ## 사용된 데이터  
@@ -109,29 +109,33 @@ INPUT x값의 특징을 추출하여 잠재백터(latent vector)인 z에 담은 
    
 
 ## 결과
-- ['groovae_4bar'] 보다 ['groovae_4bar'] with changing hprams가 좀 더 자연스러움. 
+
+1)  ['groovae_4bar'] 보다 ['groovae_4bar'] with changing hprams가 중간에 끊김현상 없이 자연스러움. 
   (batch_size = 1) 
- * ['groovae_4bar'] [drum_4bar]()
- * ['groovae_4bar'] with changing hparams [drum_4bar_1] ()
+    - ['groovae_4bar'] [groovae_4bar_drum_4bar](https://github.com/AliceecilA93/Generate-drum-4bars-with-MusicVAE-and-Groove-midi-dateset/blob/main/groovae_4_bar/gen_midi/groovae_4bar_drum_4bar.mid)
+    - ['groovae_4bar'] with changing hparams [groovae_4bar_change_hparams_drum_4bar_1](https://github.com/AliceecilA93/Generate-drum-4bars-with-MusicVAE-and-Groove-midi-dateset/blob/main/groovae_4bar_change_hparams/generated_midi/groovae_4bar_change_hparms_drum_4bar_1.mid)
 
-- 
+2) ['groovae_4bar'] with changing hparams samples 생성시 batch_size가 높을수록 리듬감이 좋음.
+
+   - batch_size 1 [groovae_4bar_change_hparams_drum_4bar_1](https://github.com/AliceecilA93/Generate-drum-4bars-with-MusicVAE-and-Groove-midi-dateset/blob/main/groovae_4bar_change_hparams/generated_midi/groovae_4bar_change_hparms_drum_4bar_1.mid)
+   - batch_size 128 [groovae_4bar_change_hparams_drum_4bar_128](https://github.com/AliceecilA93/Generate-drum-4bars-with-MusicVAE-and-Groove-midi-dateset/blob/main/groovae_4bar_change_hparams/generated_midi/groovae_4bar_change_hparms_drum_4bar_128.mid)
+   - batch_size 256 [groovae_4bar_change_hparams_drum_4bar_256](https://github.com/AliceecilA93/Generate-drum-4bars-with-MusicVAE-and-Groove-midi-dateset/blob/main/groovae_4bar_change_hparams/generated_midi/groovae_4bar_change_hparms_drum_4bar_256.mid)
+   - batch_size 512 [groovae_4bar_change_hparams_drum_4bar_512](https://github.com/AliceecilA93/Generate-drum-4bars-with-MusicVAE-and-Groove-midi-dateset/blob/main/groovae_4bar_change_hparams/generated_midi/groovae_4bar_change_hparms_drum_4bar_512.mid)
 
 
-형태소 분석기는 5가지 중에서 Mecab을 이용하고, Embedding Dimension은 높으면 높을수록, LSTM Layers는 논문에 나온 4층보다는 3층이, Dropout은 0.2 , Recurrent Dropout은 사용하지 않는 것이, Hidden Units은 낮을수록 성능이 더 좋았다. 
+3) ['hierdec-mel_4bar'] 구현 실패 
 
-하지만, 결과적으로 Transformer가 BiLSTM보다 Accuracy가 낮았음에도 더 좋은 성능을 보여주었는데 
-첫 번째, LSTM은 Input을 순차적으로 받아 병렬처리가 어려운 반면, Transformer는 Sequence를 한번에 넣음으로써 병렬처리가 가능해졌기 때문이고
-두 번째, LSTM의 Attention은 Encoder의 Hidden state와 Decoder의 Hidden state를 연산하여 Attention score를 계산하는 반면, Transformer의 Self-Attention은 Encoder로 들어간 벡터와 Encoder로 들어간 모든 벡터를 연산해서 Attention score를 계산함으로써 각 input data들의 유사도를 추정할 수 있기 때문에 
-성능이 더 높은 이유이다. 
-
+데이터셋과 모델 config와 서로 맞지않아서 발생한 이슈라고 추정.
     
 
 
 ## 참조
 -Roberts, Adam, et al. "A hierarchical latent vector model for learning long-term structure in music." International conference on machine learning. PMLR, 2018.
 https://arxiv.org/pdf/1803.05428.pdf
+
 -Jon Gillick, Adam Roberts, Jesse Engel, Douglas Eck, and David Bamman.
 "Learning to Groove with Inverse Sequence Transformations."
   International Conference on Machine Learning (ICML), 2019.
+  
 - https://github.com/magenta/magenta/tree/main/magenta/models/music_vae
 - https://github.com/oobinkim/MusicVAE_Groove
