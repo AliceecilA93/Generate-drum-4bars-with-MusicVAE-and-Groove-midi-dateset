@@ -1,6 +1,0 @@
-model_checkpoint_path: "/content/train/model.ckpt-50000"
-all_model_checkpoint_paths: "/content/train/model.ckpt-49450"
-all_model_checkpoint_paths: "/content/train/model.ckpt-49618"
-all_model_checkpoint_paths: "/content/train/model.ckpt-49787"
-all_model_checkpoint_paths: "/content/train/model.ckpt-49955"
-all_model_checkpoint_paths: "/content/train/model.ckpt-50000"
