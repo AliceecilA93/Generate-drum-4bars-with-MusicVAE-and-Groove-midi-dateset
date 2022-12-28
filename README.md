@@ -11,10 +11,10 @@
    
 코드     | 코드 링크   | 
 :-------:|:-----------:|
-Seq2Seq(LSTM)|[Seq2Seq(LSTM)](https://github.com/AliceecilA93/Machine-Translation-with-LSTM-and-Transformer/blob/main/Seq2Seq(LSTM).ipynb)|         
-Seq2Seq with Attention | [Seq2Seq with Attention](https://github.com/AliceecilA93/Machine-Translation-with-LSTM-and-Transformer/blob/main/Seq2Seq%20with%20Attention.ipynb)|
-Seq2Seq with Attention(Bi-LSTM)| [Seq2Seq with Attention(Bi-LSTM)](https://github.com/AliceecilA93/Machine-Translation-with-LSTM-and-Transformer/blob/main/Seq2Seq%20with%20Attention(Bi-LSTM).ipynb)| 
-Transformer| [Transformer](https://github.com/AliceecilA93/Machine-Translation-with-LSTM-and-Transformer/blob/main/Transformer.ipynb) |
+Groove_Midi_Dataset_analysis|[Groove_Midi_Dataset_analysis](https://github.com/AliceecilA93/Generate-drum-4bars-with-MusicVAE-and-Groove-midi-dateset/blob/main/source/Groove_Midi_Dataset_analysis.ipynb)|         
+groovae_4bar | [groovae_4bar](https://github.com/AliceecilA93/Generate-drum-4bars-with-MusicVAE-and-Groove-midi-dateset/blob/main/source/MusicVAE%2BGroove_MIDI_Dateset%2Bgroovae_4bar.ipynb)|
+groovae_4bar with changing hparams| [groovae_4bar with changing hparams](https://github.com/AliceecilA93/Generate-drum-4bars-with-MusicVAE-and-Groove-midi-dateset/blob/main/source/MusicVAE%2BGroove_MIDI_Dataset_groovae_4bar_change_hprams.ipynb)| 
+hierdec-mel-4bar | [hierdec-mel-4bar]() |
         
 
 ## 사용된 데이터  
